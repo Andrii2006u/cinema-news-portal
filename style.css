@@ -1,0 +1,115 @@
+/* Базові стилі для всієї сторінки (тіло документа) */
+body {
+    background-color: #f4f5f7; /* Запасний колір, якщо картинка не завантажиться */
+    background-image: url('https://www.transparenttextures.com/patterns/cubes.png'); /* НАША ТЕКСТУРА З ЛАБИ 2! */
+    font-family: Arial, Helvetica, sans-serif; /* Стиль шрифта */
+    font-size: 16px; /* Розмір шрифта */
+    color: #333333; /* Колір тексту */
+    line-height: 1.6; /* Міжрядковий інтервал */
+    margin: 20px 50px; /* Поля з боків */
+}
+
+/* Селектори тегів для заголовків */
+h1, h2, h3 {
+    color: #2c3e50;
+    text-align: center; /* Вирівнювання по центру */
+}
+
+/* Унікальний ідентифікатор (id) для головного заголовка */
+#main-title {
+    font-size: 32px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #2c3e50;
+    padding-bottom: 10px;
+}
+
+/* Стилі для навігації (меню) */
+nav {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Напівпрозорий білий фон для меню, щоб текст краще читався на текстурі */
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* Зовнішні стилі для посилань */
+a {
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #e74c3c;
+    text-decoration: underline;
+}
+
+/* Клас із застосуванням !important */
+.important-text {
+    color: #c0392b !important;
+    font-weight: bold !important;
+    font-size: 18px !important;
+    text-align: center;
+}
+
+/* =========================================
+   Стилі для списків
+   ========================================= */
+ul {
+    list-style-type: square; /* Квадратні маркери */
+    padding-left: 40px; /* Відступ зліва */
+    color: #2c3e50;
+}
+
+ol {
+    padding-left: 40px;
+    font-style: italic; /* Курсив для нумерованого списку */
+}
+
+dl {
+    background-color: #ffffff;
+    border: 1px dashed #bdc3c7; /* Пунктирна межа */
+    padding: 20px;
+    margin: 20px 0;
+}
+
+dt {
+    color: #2980b9;
+    font-size: 18px;
+}
+
+dd {
+    margin-bottom: 10px;
+}
+
+/* =========================================
+   Стилі для таблиць
+   ========================================= */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Прибираємо подвійні рамки */
+    margin-top: 20px;
+    margin-bottom: 40px;
+    background-color: #ffffff; /* Фон таблиці */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Легка тінь */
+}
+
+th, td {
+    border: 1px solid #bdc3c7; /* Сіра межа комірок */
+    padding: 15px; /* Внутрішнє заповнення */
+    text-align: center; /* Вирівнювання тексту */
+}
+
+th {
+    background-color: #34495e; /* Темний фон шапки */
+    color: #ffffff; /* Білий текст у шапці */
+}
+
+caption {
+    font-size: 20px;
+    margin-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.9); /* Підкладка під текст заголовка таблиці */
+    padding: 5px;
+    border-radius: 5px;
+}

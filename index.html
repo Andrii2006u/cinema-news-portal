@@ -2,13 +2,21 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8">
-  <meta name="author" content="Сергіюк Андрій">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Новини кіно — Головна</title>
+  
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    a {
+      color: #27ae60; /* Робимо посилання зеленими замість синіх */
+    }
+  </style>
+
 </head>
-<body background="https://www.transparenttextures.com/patterns/cubes.png" bgcolor="#ffffff" link="#0055FF" vlink="#5500AA" alink="#FF0055">
+<body>
   <header>
-    <h1>Світ Кіно: Головні новини</h1>
+    <h1 id="main-title">Світ Кіно: Головні новини</h1>
     <nav>
       <a href="index.html">Головна</a> |
       <a href="about.html">Про портал</a> |
@@ -20,48 +28,35 @@
 
   <main>
     <h2>Свіжі інсайди</h2>
-    <p>Вітаємо на порталі найгарячіших новин зі світу кінематографу. Тут ми публікуємо ексклюзивні трейлери, огляди прем'єр та чутки зі знімальних майданчиків.</p>
-    <p>Наша мета — тримати вас у курсі всього, що відбувається в індустрії, від гучних голлівудських блокбастерів до незалежного артхаусу.</p>
+    
+    <p style="background-color: #e8f8f5; padding: 10px; border-left: 4px solid #1abc9c;">
+      Вітаємо на порталі найгарячіших новин зі світу кінематографу. Тут ми публікуємо ексклюзивні трейлери, огляди прем'єр та чутки.
+    </p>
+    
+    <p class="important-text">УВАГА: Наш портал працює у тестовому режимі!</p>
     
     <p>Не терпиться дізнатися про гучні анонси? <a href="#announcements">Перейти до анонсів</a>.</p>
 
-    <p>А якщо ви хочете перевірити рейтинги найочікуваніших стрічок, загляньте на <a href="https://www.imdb.com" target="_blank">IMDb</a>.</p>
-
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
     <h2 id="announcements">Гучні анонси цього тижня</h2>
-    <p>Сьогодні офіційно анонсовано продовження культової детективної франшизи! Режисер обіцяє повернути оригінальний каст та додати ще більше несподіваних сюжетних поворотів.</p>
 
-    <br><br>
-
-    <table border="1" cellspacing="0" cellpadding="10">
+    <table>
       <caption><b>Топ-3 найгучніших прем'єр 2026 року</b></caption>
-      
-      <tr bgcolor="#e0e0e0">
+      <tr>
         <th>Мандалорець і Ґроґу</th>
         <th>Наречена (The Bride)</th>
         <th>Історія іграшок 5</th>
       </tr>
-      
-      <tr align="center">
-        <td><img src="images/mandalorian.jpeg" width="150" alt="Постер Мандалорець"></td>
-        <td><img src="images/bride.jpg" width="150" alt="Постер Наречена"></td>
-        <td><img src="images/toystory.jpeg" width="150" alt="Постер Історія іграшок 5"></td>
+      <tr>
+        <td><img src="images/mandalorian.jpeg" width="150" alt="Постер"></td>
+        <td><img src="images/bride.jpg" width="150" alt="Постер"></td>
+        <td><img src="images/toystory.jpeg" width="150" alt="Постер"></td>
       </tr>
-      
-      <tr align="center">
-        <td><a href="https://www.youtube.com/results?search_query=The+Mandalorian+and+Grogu+trailer+2026" target="_blank">Шукати трейлер</a></td>
-        <td><a href="https://www.youtube.com/results?search_query=The+Bride+Maggie+Gyllenhaal+trailer" target="_blank">Шукати трейлер</a></td>
-        <td><a href="https://www.youtube.com/results?search_query=Toy+Story+5+trailer+2026" target="_blank">Шукати трейлер</a></td>
-      </tr>
-      
-      <tr align="center">
-        <td>Перший за довгі роки повнометражний фільм у всесвіті «Зоряних війн».</td>
-        <td>Готичний психологічний трилер і нове бачення класичної історії Франкенштейна.</td>
-        <td>Вуді та Базз Рятівник повертаються на екрани, щоб зіткнутися зі світом сучасних технологій.</td>
+      <tr>
+        <td>Перший за довгі роки повнометражний фільм.</td>
+        <td>Готичний психологічний трилер.</td>
+        <td>Вуді та Базз повертаються на екрани.</td>
       </tr>
     </table>
-
   </main>
 
   <footer>
