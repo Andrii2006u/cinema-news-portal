@@ -1,12 +1,12 @@
 /* Базові стилі для всієї сторінки (тіло документа) */
 body {
-    background-color: #f4f5f7; /* Запасний колір, якщо картинка не завантажиться */
-    background-image: url('https://www.transparenttextures.com/patterns/cubes.png'); /* НАША ТЕКСТУРА З ЛАБИ 2! */
+    background-color: #f4f5f7;
+    background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
     font-family: Arial, Helvetica, sans-serif; /* Стиль шрифта */
-    font-size: 16px; /* Розмір шрифта */
-    color: #333333; /* Колір тексту */
+    font-size: 16px;
+    color: #333333; 
     line-height: 1.6; /* Міжрядковий інтервал */
-    margin: 20px 50px; /* Поля з боків */
+    margin: 20px 50px;
 }
 
 /* Селектори тегів для заголовків */
@@ -53,9 +53,9 @@ a:hover {
     text-align: center;
 }
 
-/* =========================================
+/*
    Стилі для списків
-   ========================================= */
+*/
 ul {
     list-style-type: square; /* Квадратні маркери */
     padding-left: 40px; /* Відступ зліва */
@@ -83,9 +83,9 @@ dd {
     margin-bottom: 10px;
 }
 
-/* =========================================
+/*
    Стилі для таблиць
-   ========================================= */
+*/
 table {
     width: 100%; 
     border-collapse: collapse; /* Прибираємо подвійні рамки */
@@ -114,148 +114,94 @@ caption {
     border-radius: 5px;
 }
 
-/* Базові стилі для всієї сторінки (тіло документа) */
-body {
-    background-color: #f4f5f7; /* Запасний колір, якщо картинка не завантажиться */
-    background-image: url('https://www.transparenttextures.com/patterns/cubes.png'); /* НАША ТЕКСТУРА З ЛАБИ 2! */
-    font-family: Arial, Helvetica, sans-serif; /* Стиль шрифта */
-    font-size: 16px; /* Розмір шрифта */
-    color: #333333; /* Колір тексту */
-    line-height: 1.6; /* Міжрядковий інтервал */
-    margin: 20px 50px; /* Поля з боків */
-}
 
-/* Селектори тегів для заголовків */
-h1, h2, h3 {
-    color: #2c3e50;
-    text-align: center; /* Вирівнювання по центру */
-}
-
-/* Унікальний ідентифікатор (id) для головного заголовка */
-#main-title {
-    font-size: 32px;
-    text-transform: uppercase;
-    border-bottom: 2px solid #2c3e50;
-    padding-bottom: 10px;
-}
-
-/* Стилі для навігації (меню) */
-nav {
-    text-align: center;
-    font-size: 18px;
-    margin-bottom: 20px;
-    background-color: rgba(255, 255, 255, 0.8); /* Напівпрозорий білий фон для меню, щоб текст краще читався на текстурі */
-    padding: 10px;
-    border-radius: 8px;
-}
-
-/* Зовнішні стилі для посилань */
-a {
-    color: #2980b9;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-a:hover {
-    color: #e74c3c;
-    text-decoration: underline;
-}
-
-/* Клас із застосуванням !important */
-.important-text {
-    color: #c0392b !important;
-    font-weight: bold !important;
-    font-size: 18px !important;
-    text-align: center;
-}
-
-/* =========================================
-   Стилі для списків
-   ========================================= */
-ul {
-    list-style-type: square; /* Квадратні маркери */
-    padding-left: 40px; /* Відступ зліва */
-    color: #2c3e50;
-}
-
-ol {
-    padding-left: 40px;
-    font-style: italic; /* Курсив для нумерованого списку */
-}
-
-dl {
-    background-color: #ffffff;
-    border: 1px dashed #bdc3c7; /* Пунктирна межа */
-    padding: 20px;
-    margin: 20px 0;
-}
-
-dt {
-    color: #2980b9;
-    font-size: 18px;
-}
-
-dd {
-    margin-bottom: 10px;
-}
-
-/* =========================================
-   Стилі для таблиць
-   ========================================= */
-table {
-    width: 100%;
-    border-collapse: collapse; /* Прибираємо подвійні рамки */
-    margin-top: 20px;
-    margin-bottom: 40px;
-    background-color: #ffffff; /* Фон таблиці */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Легка тінь */
-}
-
-th, td {
-    border: 1px solid #bdc3c7; /* Сіра межа комірок */
-    padding: 15px; /* Внутрішнє заповнення */
-    text-align: center; /* Вирівнювання тексту */
-}
-
-th {
-    background-color: #34495e; /* Темний фон шапки */
-    color: #ffffff; /* Білий текст у шапці */
-}
-
-caption {
-    font-size: 20px;
-    margin-bottom: 10px;
-    background-color: rgba(255, 255, 255, 0.9); /* Підкладка під текст заголовка таблиці */
-    padding: 5px;
-    border-radius: 5px;
-}
-
-
-/* =========================================
+/*
    ЛАБОРАТОРНА 4: Складні селектори
-   ========================================= */
+*/
 
-/* 1. Контекстний селектор (пробіл) 
-   Шукає всі <p> будь-де всередині .news-article. 
-   Робить абсолютно всі абзаци в новині трохи більшими. */
+/* 1. Контекстний селектор
+*/
 .news-article p {
     font-size: 17px;
     line-height: 1.8;
 }
 
-/* 2. Дочірній селектор ( > ) 
-   Шукає <p>, які є ПРЯМИМИ дітьми .news-article (текст про автора не зачепить, бо він у div).
-   Робить основний текст синім. */
+/* 2. Дочірній селектор
+*/
 .news-article > p {
     color: #2980b9;
 }
 
-/* 3. Сусідній селектор ( + ) 
-   Шукає <p>, який стоїть ОДРАЗУ після <h2>.
-   Робить перший вступний абзац помаранчевим і жирним. */
+/* 3. Сусідній селектор
+*/
 h2 + p {
     font-weight: bold;
-    color: #e67e22 !important; /* !important додано, щоб перебити синій колір від дочірнього селектора вище */
+    color: #e67e22 !important;
     border-left: 4px solid #e67e22;
     padding-left: 10px;
+}
+
+/* =========================================
+   ЛАБОРАТОРНА 5: Блоки, позиції, псевдокласи
+   ========================================= */
+
+/* 1. Рядкові елементи (span) */
+span.highlight {
+    background-color: #f1c40f;
+    padding: 2px 5px;
+    border-radius: 4px;
+    color: #000;
+}
+
+/* 2. Плаваючі елементи (float) */
+.float-image {
+    float: left; /* Картинка "плаває" зліва, текст її обтікає справа */
+    margin-right: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+/* Очищення float (щоб наступні елементи не "напливали") */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* 3. Позиціонування (position) */
+.news-article {
+    position: relative; /* Робимо статтю "системою координат" для дітей */
+    padding-bottom: 90px !important; /* ФІКС: Збільшили відступ з 60px до 90px */
+}
+
+.author-box {
+    position: absolute; /* Абсолютне позиціонування відносно статті */
+    bottom: 15px;
+    right: 15px;
+    background-color: #ecf0f1;
+    padding: 5px 10px;
+    border-radius: 5px;
+    /* Скидаємо старі відступи, які були прописані в HTML */
+    margin-top: 0 !important; 
+    border-top: none !important;
+}
+
+/* 4. Псевдокласи для посилань */
+nav a:link { color: #2980b9; }      /* Ще не відвідуване */
+nav a:visited { color: #8e44ad; }   /* Вже відвідували (фіолетовий) */
+nav a:hover { color: #e74c3c; text-decoration: underline; } /* Навели мишкою */
+nav a:active { color: #2ecc71; }    /* В момент кліку (зелений) */
+
+/* 5. Псевдоклас :first-child */
+nav a:first-child {
+    border-bottom: 2px solid #e74c3c; /* Підкреслить тільки перше посилання ("Головна") в меню */
+}
+
+/* 6. Псевдоелементи :before та :after */
+.important-text::before {
+    content: "⚠️ "; /* Додає значок ПЕРЕД текстом */
+}
+
+.important-text::after {
+    content: " ⚠️"; /* Додає значок ПІСЛЯ тексту */
 }
