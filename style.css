@@ -2,17 +2,17 @@
 body {
     background-color: #f4f5f7;
     background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
-    font-family: Arial, Helvetica, sans-serif; /* Стиль шрифта */
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     color: #333333; 
-    line-height: 1.6; /* Міжрядковий інтервал */
+    line-height: 1.6;
     margin: 20px 50px;
 }
 
 /* Селектори тегів для заголовків */
 h1, h2, h3 {
     color: #2c3e50;
-    text-align: center; /* Вирівнювання по центру */
+    text-align: center;
 }
 
 /* Унікальний ідентифікатор (id) для головного заголовка */
@@ -28,7 +28,7 @@ nav {
     text-align: center;
     font-size: 18px;
     margin-bottom: 20px;
-    background-color: rgba(255, 255, 255, 0.8); /* Напівпрозорий білий фон для меню, щоб текст краще читався на текстурі */
+    background-color: rgba(255, 255, 255, 0.8);
     padding: 10px;
     border-radius: 8px;
 }
@@ -53,23 +53,21 @@ a:hover {
     text-align: center;
 }
 
-/*
-   Стилі для списків
-*/
+/* Стилі для списків */
 ul {
-    list-style-type: square; /* Квадратні маркери */
-    padding-left: 40px; /* Відступ зліва */
+    list-style-type: square;
+    padding-left: 40px;
     color: #2c3e50;
 }
 
 ol {
     padding-left: 40px;
-    font-style: italic; /* Курсив для нумерованого списку */
+    font-style: italic;
 }
 
 dl {
     background-color: #ffffff;
-    border: 1px dashed #bdc3c7; /* Пунктирна межа */
+    border: 1px dashed #bdc3c7;
     padding: 20px;
     margin: 20px 0;
 }
@@ -83,57 +81,51 @@ dd {
     margin-bottom: 10px;
 }
 
-/*
-   Стилі для таблиць
-*/
+/* Стилі для таблиць */
 table {
     width: 100%; 
-    border-collapse: collapse; /* Прибираємо подвійні рамки */
+    border-collapse: collapse;
     margin-top: 20px;
     margin-bottom: 40px;
-    background-color: #ffffff; /* Фон таблиці */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Легка тінь */
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 th, td {
-    border: 1px solid #bdc3c7; /* Сіра межа комірок */
-    padding: 15px; /* Внутрішнє заповнення */
-    text-align: center; /* Вирівнювання тексту */
+    border: 1px solid #bdc3c7;
+    padding: 15px;
+    text-align: center;
 }
 
 th {
-    background-color: #34495e; /* Темний фон шапки */
-    color: #ffffff; /* Білий текст у шапці */
+    background-color: #34495e;
+    color: #ffffff;
 }
 
 caption {
     font-size: 20px;
     margin-bottom: 10px;
-    background-color: rgba(255, 255, 255, 0.9); /* Підкладка під текст заголовка таблиці */
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 5px;
     border-radius: 5px;
 }
 
-
-/*
+/* =========================================
    ЛАБОРАТОРНА 4: Складні селектори
-*/
+   ========================================= */
 
-/* 1. Контекстний селектор
-*/
+/* 1. Контекстний селектор */
 .news-article p {
     font-size: 17px;
     line-height: 1.8;
 }
 
-/* 2. Дочірній селектор
-*/
+/* 2. Дочірній селектор */
 .news-article > p {
     color: #2980b9;
 }
 
-/* 3. Сусідній селектор
-*/
+/* 3. Сусідній селектор */
 h2 + p {
     font-weight: bold;
     color: #e67e22 !important;
@@ -155,53 +147,273 @@ span.highlight {
 
 /* 2. Плаваючі елементи (float) */
 .float-image {
-    float: left; /* Картинка "плаває" зліва, текст її обтікає справа */
+    float: left;
     margin-right: 15px;
     margin-bottom: 10px;
     border-radius: 5px;
 }
 
-/* Очищення float (щоб наступні елементи не "напливали") */
 .clearfix::after {
     content: "";
     clear: both;
     display: table;
 }
 
-/* 3. Позиціонування (position) */
+/* 3. Позиціонування (position) ТА ДИЗАЙН СТАТТІ */
 .news-article {
-    position: relative; /* Робимо статтю "системою координат" для дітей */
-    padding-bottom: 90px !important; /* ФІКС: Збільшили відступ з 60px до 90px */
+    position: relative;
+    background-color: #ffffff; /* Повернули білий фон */
+    padding: 15px; /* Повернули внутрішні відступи */
+    padding-bottom: 90px !important; /* Відступ для автора */
+    border-radius: 8px; /* Повернули закруглені кути */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Повернули тінь */
+    margin: 20px 0; /* Повернули зовнішні відступи */
 }
 
 .author-box {
-    position: absolute; /* Абсолютне позиціонування відносно статті */
+    position: absolute;
     bottom: 15px;
     right: 15px;
     background-color: #ecf0f1;
     padding: 5px 10px;
     border-radius: 5px;
-    /* Скидаємо старі відступи, які були прописані в HTML */
     margin-top: 0 !important; 
     border-top: none !important;
 }
 
 /* 4. Псевдокласи для посилань */
-nav a:link { color: #2980b9; }      /* Ще не відвідуване */
-nav a:visited { color: #8e44ad; }   /* Вже відвідували (фіолетовий) */
-nav a:hover { color: #e74c3c; text-decoration: underline; } /* Навели мишкою */
-nav a:active { color: #2ecc71; }    /* В момент кліку (зелений) */
+nav a:link { color: #2980b9; }
+nav a:visited { color: #8e44ad; }
+nav a:hover { color: #e74c3c; text-decoration: underline; }
+nav a:active { color: #2ecc71; }
 
 /* 5. Псевдоклас :first-child */
 nav a:first-child {
-    border-bottom: 2px solid #e74c3c; /* Підкреслить тільки перше посилання ("Головна") в меню */
+    border-bottom: 2px solid #e74c3c;
 }
 
 /* 6. Псевдоелементи :before та :after */
 .important-text::before {
-    content: "⚠️ "; /* Додає значок ПЕРЕД текстом */
+    content: "⚠️ ";
 }
 
 .important-text::after {
-    content: " ⚠️"; /* Додає значок ПІСЛЯ тексту */
+    content: " ⚠️";
+}
+
+/* =========================================
+   НОВІ КЛАСИ ДЛЯ ЧИСТОГО HTML (Лабораторна 6)
+   ========================================= */
+
+.cinema-toggle-btn {
+    padding: 6px 12px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: #2c3e50;
+    color: #f1c40f;
+    border: 1px solid #f1c40f;
+    border-radius: 4px;
+}
+
+.info-banner {
+    background-color: #e8f8f5;
+    padding: 10px;
+    border-left: 4px solid #1abc9c;
+    margin: 20px 0;
+}
+
+.quiz-block {
+    background-color: #fff3e0;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 20px 0;
+    text-align: center;
+    border: 1px dashed #e67e22;
+}
+
+.quiz-block p {
+    margin: 0 0 10px 0;
+    font-weight: bold;
+    color: #d35400;
+}
+
+.quiz-btn {
+    padding: 10px 20px;
+    background-color: #d35400;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.comments-wrapper {
+    margin-bottom: 30px;
+}
+
+.toggle-comments-btn {
+    padding: 10px 15px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#comments-box {
+    display: none;
+    background: #ffffff;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-top: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.comments-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.comments-header h3 {
+    margin: 0;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: red;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#comment-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+    margin-bottom: 10px;
+    font-family: inherit;
+}
+
+.add-comment-btn {
+    padding: 8px 15px;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#comments-list {
+    margin-top: 20px;
+    border-top: 2px dashed #bdc3c7;
+    padding-top: 15px;
+}
+
+#no-comments-msg {
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+.comment-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}
+
+.delete-btn {
+    margin-left: 10px;
+    color: white;
+    background-color: #e74c3c;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 2px 8px;
+}
+
+/* =========================================
+   РЕЖИМ КІНОТЕАТРУ (Адаптивна темна тема)
+   ========================================= */
+
+body.cinema-mode {
+    background-color: #121212 !important;
+    background-image: none !important;
+    color: #e0e0e0 !important;
+}
+
+body.cinema-mode h1,
+body.cinema-mode h2,
+body.cinema-mode h3,
+body.cinema-mode p,
+body.cinema-mode a,
+body.cinema-mode caption,
+body.cinema-mode th,
+body.cinema-mode td,
+body.cinema-mode li,
+body.cinema-mode dt,
+body.cinema-mode dd,
+body.cinema-mode b {
+    color: #e0e0e0 !important;
+}
+
+body.cinema-mode h1, 
+body.cinema-mode h2, 
+body.cinema-mode h3 {
+    color: #ffffff !important;
+    border-bottom-color: #444 !important;
+}
+
+body.cinema-mode nav,
+body.cinema-mode .news-article,
+body.cinema-mode table,
+body.cinema-mode dl,
+body.cinema-mode .author-box {
+    background-color: #1e1e1e !important;
+    border-color: #444 !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.8) !important;
+}
+
+body.cinema-mode th {
+    background-color: #2c3e50 !important;
+}
+
+body.cinema-mode caption {
+    background-color: #2a2a2a !important;
+    color: #ffffff !important;
+    border: 1px solid #444 !important;
+}
+
+/* Адаптація нових блоків під темну тему */
+body.cinema-mode .info-banner,
+body.cinema-mode .quiz-block,
+body.cinema-mode #comments-box,
+body.cinema-mode .comment-item {
+    background-color: #1e1e1e !important;
+    border-color: #444 !important;
+    color: #ffffff !important;
+}
+
+body.cinema-mode #comment-input {
+    background-color: #2a2a2a !important;
+    color: #ffffff !important;
+    border-color: #555 !important;
+}
+
+body.cinema-mode .quiz-block p,
+body.cinema-mode #no-comments-msg {
+    color: #f1c40f !important; /* Робимо акцентним жовтим у темряві */
+}
+
+body.cinema-mode #comments-list b {
+    color: #3498db !important; /* Синій колір для імені автора */
 }

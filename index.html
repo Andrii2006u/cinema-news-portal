@@ -5,9 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Новини кіно — Головна</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    a { color: #27ae60; }
-  </style>
+  <script src="script.js"></script>
 </head>
 <body>
   <header>
@@ -16,7 +14,8 @@
       <a href="index.html">Головна</a> |
       <a href="about.html">Про портал</a> |
       <a href="services.html">Реклама</a> |
-      <a href="contacts.html">Редакція</a>
+      <a href="contacts.html">Редакція</a> |
+      <button onclick="activateCinemaMode()" class="cinema-toggle-btn">🎬 Режим кінотеатру</button>
     </nav>
     <hr>
   </header>
@@ -24,32 +23,56 @@
   <main>
     <h2>Свіжі інсайди</h2>
     
-    <p style="background-color: #e8f8f5; padding: 10px; border-left: 4px solid #1abc9c;">
-      Кінематограф не стоїть на місці, і ми тримаємо руку на пульсі. Від гучних голлівудських блокбастерів до незалежного європейського артхаусу — наша редакція щодня збирає для вас найсвіжіші інсайди.
-    </p>
-    
-    <p class="important-text">УВАГА: Наш портал працює у тестовому режимі!</p>
+    <div class="info-banner">
+      <p>Кінематограф не стоїть на місці, і ми тримаємо руку на пульсі. Від гучних голлівудських блокбастерів до незалежного європейського артхаусу — наша редакція щодня збирає для вас найсвіжіші інсайди.</p>
+    </div>
 
-    <article class="news-article clearfix" style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin: 20px 0;">
-      
-      <h2>Ексклюзив: За лаштунками нового фільму <span class="highlight">Крістофера Нолана</span></h2>
+    <p class="important-text">УВАГА! НАШ ПОРТАЛ ПРАЦЮЄ У ТЕСТОВОМУ РЕЖИМІ</p>
+
+    <article class="news-article clearfix">
+      <h2 id="nolans-article">Ексклюзив: За лаштунками нового фільму <span class="highlight">Крістофера Нолана</span></h2>
       
       <p><img src="images/studio.jpeg" width="200" alt="Студія" class="float-image">Оскароносний режисер нарешті розкрив перші деталі свого наступного секретного проєкту. І, як завжди, це буде щось масштабне.</p>
       
-      <p>Інсайдери повідомляють, що для зйомок вже будують повномасштабну модель космічної станції у павільйонах Warner Bros. Фільм досліджуватиме парадокси часу на квантовому рівні, а головну роль, за чутками, може виконати Том Голланд.</p>
+      <p>Інсайдери повідомляють, що для зйомок вже будують повномасштабну модель космічної станції у павільйонах Warner Bros. Фільм досліджуватиме парадокси часу на квантовому рівні.</p>
       
-      <p>Жодної зеленої кімнати — Нолан знову робить ставку на практичні спецефекти. Глядачі можуть очікувати на неймовірний візуальний досвід від майстра масштабного кіно.</p>
-      
+      <div class="quiz-block">
+        <p>🎬 Фанат Крістофера Нолана?</p>
+        <button onclick="playMovieQuiz()" class="quiz-btn">Зіграти в міні-гру</button>
+      </div>
+
       <div class="author-box">
         <p>Спеціальний репортаж: Редакція порталу.</p>
       </div>
     </article>
-    
+
+    <div class="comments-wrapper">
+        <button onclick="toggleComments()" class="toggle-comments-btn">
+            💬 Обговорення статті
+        </button>
+
+        <div id="comments-box">
+            <div class="comments-header">
+                <h3>Коментарі</h3>
+                <button onclick="toggleComments()" class="close-btn">Закрити ×</button>
+            </div>
+            
+            <textarea id="comment-input" rows="2" placeholder="Напишіть свою думку..."></textarea>
+            
+            <button onclick="addComment()" class="add-comment-btn">
+                Додати коментар
+            </button>
+            
+            <div id="comments-list">
+                <p id="no-comments-msg">Поки що немає коментарів. Будьте першим!</p>
+            </div>
+        </div>
+    </div>
+
     <p>Хочете знати більше? <a href="#announcements">Перейти до розкладу прем'єр</a>.</p>
 
     <h2 id="announcements">Найближчі релізи</h2>
-
-    <table>
+    <table id="release-table">
       <caption><b>Топ-3 найочікуваніших стрічок 2026 року</b></caption>
       <tr>
         <th>Мандалорець і Ґроґу</th>
@@ -71,7 +94,22 @@
 
   <footer>
     <hr>
-    <p style="text-align: center;">Автор: Сергіюк Андрій</p>
+    <p style="text-align: center;">Автор: Андрій Сергіюк</p>
+    <script>
+      document.write("<p style='text-align: center; color: #95a5a6; font-size: 10px;'>Скрипт виконано: " + new Date().toLocaleDateString() + "</p>");
+    </script>
   </footer>
+
+  <script>
+    window.onload = function() {
+      if (!sessionStorage.getItem("visited")) {
+        if (confirm("Бажаєте підписатися на інсайди?")) {
+          let name = prompt("Як вас звати?", "Кіноман");
+          if (name) alert("Вітаємо, " + name + "!");
+        }
+        sessionStorage.setItem("visited", "true");
+      }
+    };
+  </script>
 </body>
 </html>
