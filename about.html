@@ -38,6 +38,28 @@
       <div style="text-align: center;">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/50ou2MRAO5w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
+
+
+      <!--ЛАБОРАТОРНА 7: Віджет "Оцінка відео"-->
+      <div id="video-rating-container" class="rating-widget">
+        <h3>Оцініть це відео:</h3>
+        <div class="stars" id="stars-container">
+            <!-- 1. Обробник через АТРИБУТ (Вимога лаби) -->
+            <span class="star" id="star1" onclick="rateStarAttr(1)">★</span>
+            
+            <!-- 2. Обробник для цієї зірки додамо через ВЛАСТИВІСТЬ у JS -->
+            <span class="star" id="star2">★</span>
+            
+            <!-- Інші зірки оброблятимуться через СПЛИВАННЯ/ДЕЛЕГУВАННЯ -->
+            <span class="star" data-val="3">★</span>
+            <span class="star" data-val="4">★</span>
+            <span class="star" data-val="5">★</span>
+        </div>
+        <p id="rating-result">Ваша оцінка: 0</p>
+        <button id="submit-rating-btn" class="quiz-btn">Підтвердити оцінку</button>
+      </div>
+      <!-- ========================================= -->
+
     </article>
   </main>
 
@@ -45,5 +67,8 @@
     <hr>
     <p style="text-align: center;">Автор: Сергіюк Андрій</p>
   </footer>
+  
+  <!-- Підключаємо скрипт в кінці тіла, щоб DOM встиг завантажитись -->
+  <script src="script.js"></script>
 </body>
 </html>

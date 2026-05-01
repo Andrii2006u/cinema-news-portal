@@ -153,21 +153,16 @@ span.highlight {
     border-radius: 5px;
 }
 
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
-}
 
-/* 3. Позиціонування (position) ТА ДИЗАЙН СТАТТІ */
+/* 3. Позиціонування (position)*/
 .news-article {
     position: relative;
-    background-color: #ffffff; /* Повернули білий фон */
-    padding: 15px; /* Повернули внутрішні відступи */
-    padding-bottom: 90px !important; /* Відступ для автора */
-    border-radius: 8px; /* Повернули закруглені кути */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Повернули тінь */
-    margin: 20px 0; /* Повернули зовнішні відступи */
+    background-color: #ffffff;
+    padding: 15px; 
+    padding-bottom: 90px !important; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+    margin: 20px 0; 
 }
 
 .author-box {
@@ -201,9 +196,9 @@ nav a:first-child {
     content: " ⚠️";
 }
 
-/* =========================================
-   НОВІ КЛАСИ ДЛЯ ЧИСТОГО HTML (Лабораторна 6)
-   ========================================= */
+/*
+(Лабораторна 6)
+*/
 
 .cinema-toggle-btn {
     padding: 6px 12px;
@@ -341,9 +336,9 @@ nav a:first-child {
     padding: 2px 8px;
 }
 
-/* =========================================
+/*
    РЕЖИМ КІНОТЕАТРУ (Адаптивна темна тема)
-   ========================================= */
+*/
 
 body.cinema-mode {
     background-color: #121212 !important;
@@ -416,4 +411,117 @@ body.cinema-mode #no-comments-msg {
 
 body.cinema-mode #comments-list b {
     color: #3498db !important; /* Синій колір для імені автора */
+}
+
+/*
+   ЛАБОРАТОРНА 7: Стилі для віджета оцінки
+*/
+.rating-widget {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px dashed #3498db;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.rating-widget h3 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.stars {
+    font-size: 40px;
+    color: #bdc3c7;
+    cursor: pointer;
+    margin-bottom: 10px;
+    user-select: none;
+}
+
+.stars .star {
+    transition: color 0.2s ease-in-out;
+}
+
+.stars .star:hover {
+    color: #f39c12;
+}
+
+/* Клас активної (обраної) зірки */
+.stars .star.active {
+    color: #f1c40f;
+}
+
+#rating-result {
+    font-weight: bold;
+    color: #34495e;
+}
+
+/*
+   ЛАБОРАТОРНА 7: Стилі для 2 завдання (Головна сторінка)
+*/
+
+.movie-picker-section {
+    background-color: #fdfefe;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 30px 0;
+    border: 2px dashed #3498db;
+}
+
+/* 1. Стилі для списку жанрів */
+.genre-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.genre-list li {
+    padding: 10px 20px;
+    background-color: #ecf0f1;
+    border: 2px solid #bdc3c7;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+/* Клас для підсвічування обраного жанру */
+.genre-list li.active-genre {
+    background-color: #f1c40f;
+    border-color: #e67e22;
+    color: #d35400;
+    transform: scale(1.05);
+}
+
+/* 2. Стилі для меню */
+.movie-menu {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+    display: flex;
+    gap: 10px;
+}
+
+/* 3. Стилі для кнопки копіювання (Патерн Поведінка) */
+.copy-btn {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #34495e;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.3s;
+}
+
+.copy-btn:hover {
+    background-color: #2c3e50;
 }
