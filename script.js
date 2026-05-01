@@ -180,6 +180,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("Спрацював обробник через ВЛАСТИВІСТЬ: Обрано зірку 2");
     };
 
+
     // 3. Об’єкт з методом handleEvent (Делегування подій та event.currentTarget)
     const RatingTracker = {
         handleEvent(event) {
@@ -357,4 +358,105 @@ document.addEventListener("click", function(event) {
             }, 1500);
         });
     }
+});
+
+//
+// ЛАБОРАТОРНА 8: Події миші (Дошка планування)
+//
+
+document.addEventListener("DOMContentLoaded", () => {
+    const columns = document.querySelectorAll('.planner-col');
+    const cards = document.querySelectorAll('.movie-card');
+    const board = document.querySelector('.planner-board');
+    
+    // Якщо дошки на сторінці немає, скрипт зупиняється
+    if (!board) return; 
+
+    // 1. ПОДІЇ НАВЕДЕННЯ (mouseover, mouseout, target, relatedTarget)
+    columns.forEach(col => {
+        col.addEventListener('mouseover', function(event) {
+            // event.target - визначаємо конкретну колонку, над якою курсор
+            let target = event.target.closest('.planner-col');
+            if (target) {
+                target.classList.add('active-col'); // Збільшуємо колонку
+            }
+        });
+
+        col.addEventListener('mouseout', function(event) {
+            let target = event.target.closest('.planner-col');
+            // event.relatedTarget - елемент, КУДИ перейшла миша
+            let relatedTarget = event.relatedTarget;
+
+            // Перевіряємо, що курсор дійсно покинув межі колонки, а не просто перейшов на картку всередині неї
+            if (target && (!relatedTarget || !target.contains(relatedTarget))) {
+                target.classList.remove('active-col'); // Повертаємо розмір
+            }
+        });
+    });
+
+    // 2. DRAG-AND-DROP (mousedown, mousemove, mouseup)
+    let shiftX, shiftY;
+
+    cards.forEach(card => {
+        // Вимикаємо стандартний браузерний drag-and-drop, щоб писати свій
+        card.ondragstart = function() { return false; };
+
+        card.addEventListener('mousedown', function(event) {
+            // Вираховуємо місце кліку на картці, щоб вона не "стрибала" центром на курсор
+            let rect = card.getBoundingClientRect();
+            shiftX = event.clientX - rect.left;
+            shiftY = event.clientY - rect.top;
+
+            // Відриваємо картку від поточного місця
+            card.style.position = 'absolute';
+            card.style.width = rect.width + 'px'; 
+            card.classList.add('dragging');
+            document.body.append(card); // Кидаємо в body, щоб тягати поверх усього
+
+            // Ставимо картку під курсор
+            moveAt(event.pageX, event.pageY);
+
+            function moveAt(pageX, pageY) {
+                card.style.left = pageX - shiftX + 'px';
+                card.style.top = pageY - shiftY + 'px';
+            }
+
+            // Рух миші
+            function onMouseMove(event) {
+                moveAt(event.pageX, event.pageY);
+            }
+
+            document.addEventListener('mousemove', onMouseMove);
+
+            // Відпускаємо мишу
+            card.addEventListener('mouseup', function onMouseUp(event) {
+                document.removeEventListener('mousemove', onMouseMove);
+                card.removeEventListener('mouseup', onMouseUp);
+                
+                card.classList.remove('dragging');
+                
+                // Трюк: на мілісекунду ховаємо картку, щоб перевірити, над чим ми знаходимось
+                card.style.display = 'none';
+                let elemBelow = document.elementFromPoint(event.clientX, event.clientY);
+                card.style.display = 'block';
+
+                if (elemBelow) {
+                    // Шукаємо найближчу зону для скидання (робочі дні, вихідні або пул)
+                    let dropZone = elemBelow.closest('.drop-zone');
+                    
+                    if (dropZone) {
+                        // Вставляємо картку в нову колонку
+                        dropZone.appendChild(card);
+                    } else {
+                        // Якщо кинули мимо, повертаємо назад в початковий список
+                        document.getElementById('movies-pool').appendChild(card);
+                    }
+                }
+                
+                // Скидаємо стилі, щоб картка гарно лягла у блок
+                card.style.position = 'static';
+                card.style.width = 'auto';
+            });
+        });
+    });
 });
